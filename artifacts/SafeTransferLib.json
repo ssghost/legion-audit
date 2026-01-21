@@ -1,0 +1,121 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"sepolia:11155111": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "60556032600b8282823980515f1a607314602657634e487b7160e01b5f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f5ffdfea2646970667358221220fe184e0e866f5b78e6b75866c3a9b8aae341a0b8abe084eb88d3a4207ac2dbb464736f6c634300081e0033",
+			"opcodes": "PUSH1 0x55 PUSH1 0x32 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x26 JUMPI PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 INVALID XOR 0x4E 0xE DUP7 PUSH16 0x5B78E6B75866C3A9B8AAE341A0B8ABE0 DUP5 0xEB DUP9 0xD3 LOG4 KECCAK256 PUSH27 0xC2DBB464736F6C634300081E003300000000000000000000000000 ",
+			"sourceMap": "579:32231:0:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;579:32231:0;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "730000000000000000000000000000000000000000301460806040525f5ffdfea2646970667358221220fe184e0e866f5b78e6b75866c3a9b8aae341a0b8abe084eb88d3a4207ac2dbb464736f6c634300081e0033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 INVALID XOR 0x4E 0xE DUP7 PUSH16 0x5B78E6B75866C3A9B8AAE341A0B8ABE0 DUP5 0xEB DUP9 0xD3 LOG4 KECCAK256 PUSH27 0xC2DBB464736F6C634300081E003300000000000000000000000000 ",
+			"sourceMap": "579:32231:0:-:0;;;;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "17000",
+				"executionCost": "96",
+				"totalCost": "17096"
+			},
+			"internal": {
+				"balanceOf(address,address)": "infinite",
+				"checkBalanceOf(address,address)": "infinite",
+				"forceSafeTransferAllETH(address)": "infinite",
+				"forceSafeTransferAllETH(address,uint256)": "infinite",
+				"forceSafeTransferETH(address,uint256)": "infinite",
+				"forceSafeTransferETH(address,uint256,uint256)": "infinite",
+				"permit2(address,address,address,uint256,uint256,uint8,bytes32,bytes32)": "infinite",
+				"permit2Approve(address,address,uint160,uint48)": "infinite",
+				"permit2Lockdown(address,address)": "infinite",
+				"permit2TransferFrom(address,address,address,uint256)": "infinite",
+				"safeApprove(address,address,uint256)": "infinite",
+				"safeApproveWithRetry(address,address,uint256)": "infinite",
+				"safeMoveETH(address,uint256)": "infinite",
+				"safeTransfer(address,address,uint256)": "infinite",
+				"safeTransferAll(address,address)": "infinite",
+				"safeTransferAllETH(address)": "infinite",
+				"safeTransferAllFrom(address,address,address)": "infinite",
+				"safeTransferETH(address,uint256)": "infinite",
+				"safeTransferFrom(address,address,address,uint256)": "infinite",
+				"safeTransferFrom2(address,address,address,uint256)": "infinite",
+				"simplePermit2(address,address,address,uint256,uint256,uint8,bytes32,bytes32)": "infinite",
+				"totalSupply(address)": "infinite",
+				"trySafeTransferAllETH(address,uint256)": "infinite",
+				"trySafeTransferETH(address,uint256,uint256)": "infinite",
+				"trySafeTransferFrom(address,address,address,uint256)": "infinite"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "ApproveFailed",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "ETHTransferFailed",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "Permit2AmountOverflow",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "Permit2ApproveFailed",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "Permit2Failed",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "Permit2LockdownFailed",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "TotalSupplyQueryFailed",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "TransferFailed",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "TransferFromFailed",
+			"type": "error"
+		}
+	]
+}

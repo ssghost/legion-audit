@@ -1,0 +1,1248 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "ECDSAInvalidSignature",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "length",
+						"type": "uint256"
+					}
+				],
+				"name": "ECDSAInvalidSignatureLength",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "ECDSAInvalidSignatureS",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "EnforcedPause",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ExpectedPause",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidInitialization",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "investor",
+						"type": "address"
+					}
+				],
+				"name": "LegionSale__AlreadySettled",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expectedAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "LegionSale__InvalidFeeAmount",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "LegionSale__InvalidSignature",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expectedAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "LegionSale__InvalidTokenAmountSupplied",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LegionSale__NotCalledByLegion",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LegionSale__NotCalledByProject",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LegionSale__TokensAlreadySupplied",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LegionSale__TokensNotSupplied",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LegionSale__ZeroAddressProvided",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LegionSale__ZeroValueProvided",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "vestingType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "vestingStartTimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "vestingDurationSeconds",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "vestingCliffDurationSeconds",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "epochDurationSeconds",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numberOfEpochs",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenAllocationOnTGERate",
+						"type": "uint256"
+					}
+				],
+				"name": "LegionVesting__InvalidVestingConfig",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NotInitializing",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "EmergencyWithdraw",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "version",
+						"type": "uint64"
+					}
+				],
+				"name": "Initialized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "legionBouncer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "legionSigner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "legionFeeReceiver",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "vestingFactory",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "vestingController",
+						"type": "address"
+					}
+				],
+				"name": "LegionAddressesSynced",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "Paused",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountToBeVested",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountOnClaim",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "investor",
+						"type": "address"
+					}
+				],
+				"name": "TokenAllocationClaimed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "legionFee",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "referrerFee",
+						"type": "uint256"
+					}
+				],
+				"name": "TokensSuppliedForDistribution",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "Unpaused",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "investor",
+						"type": "address"
+					}
+				],
+				"name": "VestedTokensReleased",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "claimAmount",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint64",
+								"name": "vestingStartTime",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "vestingDurationSeconds",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "vestingCliffDurationSeconds",
+								"type": "uint64"
+							},
+							{
+								"internalType": "enum ILegionVestingManager.VestingType",
+								"name": "vestingType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint64",
+								"name": "epochDurationSeconds",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "numberOfEpochs",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "tokenAllocationOnTGERate",
+								"type": "uint64"
+							}
+						],
+						"internalType": "struct ILegionVestingManager.LegionInvestorVestingConfig",
+						"name": "investorVestingConfig",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bytes",
+						"name": "claimSignature",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "vestingSignature",
+						"type": "bytes"
+					}
+				],
+				"name": "claimTokenAllocation",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "distributorConfiguration",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint16",
+								"name": "legionFeeOnTokensSoldBps",
+								"type": "uint16"
+							},
+							{
+								"internalType": "uint16",
+								"name": "referrerFeeOnTokensSoldBps",
+								"type": "uint16"
+							},
+							{
+								"internalType": "bool",
+								"name": "tokensSupplied",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalAmountToDistribute",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalAmountClaimed",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "askToken",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "projectAdmin",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "legionBouncer",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "legionFeeReceiver",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "referrerFeeReceiver",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "legionSigner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "addressRegistry",
+								"type": "address"
+							}
+						],
+						"internalType": "struct ILegionTokenDistributor.TokenDistributorConfig",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "emergencyWithdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint16",
+								"name": "legionFeeOnTokensSoldBps",
+								"type": "uint16"
+							},
+							{
+								"internalType": "uint16",
+								"name": "referrerFeeOnTokensSoldBps",
+								"type": "uint16"
+							},
+							{
+								"internalType": "address",
+								"name": "referrerFeeReceiver",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "askToken",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "addressRegistry",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "projectAdmin",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalAmountToDistribute",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ILegionTokenDistributor.TokenDistributorInitializationParams",
+						"name": "tokenDistributorInitParams",
+						"type": "tuple"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "investor",
+						"type": "address"
+					}
+				],
+				"name": "investorPosition",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "hasSettled",
+								"type": "bool"
+							},
+							{
+								"internalType": "address",
+								"name": "vestingAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct ILegionTokenDistributor.InvestorPosition",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "investor",
+						"type": "address"
+					}
+				],
+				"name": "investorVestingStatus",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint64",
+								"name": "start",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "end",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "cliffEnd",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "duration",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint256",
+								"name": "released",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "releasable",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "vestedAmount",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ILegionVestingManager.LegionInvestorVestingStatus",
+						"name": "vestingStatus",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pause",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "paused",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "releaseVestedTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "legionFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "referrerFee",
+						"type": "uint256"
+					}
+				],
+				"name": "supplyTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "syncLegionAddresses",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unpause",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vestingConfiguration",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "vestingFactory",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "vestingController",
+								"type": "address"
+							}
+						],
+						"internalType": "struct ILegionVestingManager.LegionVestingConfig",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Legion",
+			"details": "Handles token allocation claims, vesting deployment, and emergency operations with signature verification.",
+			"errors": {
+				"ECDSAInvalidSignature()": [
+					{
+						"details": "The signature is invalid."
+					}
+				],
+				"ECDSAInvalidSignatureLength(uint256)": [
+					{
+						"details": "The signature has an invalid length."
+					}
+				],
+				"ECDSAInvalidSignatureS(bytes32)": [
+					{
+						"details": "The signature has an S value that is in the upper half order."
+					}
+				],
+				"EnforcedPause()": [
+					{
+						"details": "The operation failed because the contract is paused."
+					}
+				],
+				"ExpectedPause()": [
+					{
+						"details": "The operation failed because the contract is not paused."
+					}
+				],
+				"InvalidInitialization()": [
+					{
+						"details": "The contract is already initialized."
+					}
+				],
+				"LegionSale__AlreadySettled(address)": [
+					{
+						"params": {
+							"investor": "The address of the investor attempting to settle."
+						}
+					}
+				],
+				"LegionSale__InvalidFeeAmount(uint256,uint256)": [
+					{
+						"params": {
+							"amount": "The fee amount provided.",
+							"expectedAmount": "The expected fee amount."
+						}
+					}
+				],
+				"LegionSale__InvalidSignature(bytes)": [
+					{
+						"params": {
+							"signature": "The signature provided by the investor."
+						}
+					}
+				],
+				"LegionSale__InvalidTokenAmountSupplied(uint256,uint256)": [
+					{
+						"params": {
+							"amount": "The amount of tokens supplied.",
+							"expectedAmount": "The expected token amount to be supplied."
+						}
+					}
+				],
+				"LegionVesting__InvalidVestingConfig(uint8,uint256,uint256,uint256,uint256,uint256,uint256)": [
+					{
+						"params": {
+							"epochDurationSeconds": "The duration of each epoch in seconds.",
+							"numberOfEpochs": "The total number of epochs in the vesting schedule.",
+							"tokenAllocationOnTGERate": "The token allocation released at TGE (18 decimal precision).",
+							"vestingCliffDurationSeconds": "The duration of the cliff period in seconds.",
+							"vestingDurationSeconds": "The duration of the vesting schedule in seconds.",
+							"vestingStartTimestamp": "The Unix timestamp when vesting starts.",
+							"vestingType": "The type of vesting schedule (linear or epoch-based)."
+						}
+					}
+				],
+				"NotInitializing()": [
+					{
+						"details": "The contract is not initializing."
+					}
+				]
+			},
+			"events": {
+				"EmergencyWithdraw(address,address,uint256)": {
+					"params": {
+						"amount": "The amount of tokens withdrawn.",
+						"receiver": "The address receiving the withdrawn tokens.",
+						"token": "The address of the token withdrawn."
+					}
+				},
+				"Initialized(uint64)": {
+					"details": "Triggered when the contract has been initialized."
+				},
+				"LegionAddressesSynced(address,address,address,address,address)": {
+					"params": {
+						"legionBouncer": "The updated Legion bouncer address.",
+						"legionFeeReceiver": "The updated Legion fee receiver address.",
+						"legionSigner": "The updated Legion signer address.",
+						"vestingController": "The updated vesting controller address.",
+						"vestingFactory": "The updated vesting factory address."
+					}
+				},
+				"Paused(address)": {
+					"details": "Emitted when the pause is triggered by `account`."
+				},
+				"TokenAllocationClaimed(uint256,uint256,address)": {
+					"params": {
+						"amountOnClaim": "The amount of tokens distributed immediately.",
+						"amountToBeVested": "The amount of tokens sent to vesting contract.",
+						"investor": "The address of the claiming investor."
+					}
+				},
+				"TokensSuppliedForDistribution(uint256,uint256,uint256)": {
+					"params": {
+						"amount": "The amount of tokens supplied.",
+						"legionFee": "The fee amount collected by Legion.",
+						"referrerFee": "The fee amount collected by the referrer."
+					}
+				},
+				"Unpaused(address)": {
+					"details": "Emitted when the pause is lifted by `account`."
+				},
+				"VestedTokensReleased(address)": {
+					"params": {
+						"investor": "The address of the investor."
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"claimTokenAllocation(uint256,(uint64,uint64,uint64,uint8,uint64,uint64,uint64),bytes,bytes)": {
+					"params": {
+						"claimAmount": "The amount of tokens to claim.",
+						"claimSignature": "The signature verifying investment eligibility.",
+						"investorVestingConfig": "The vesting configuration for the investor.",
+						"vestingSignature": "The signature verifying vesting terms."
+					}
+				},
+				"constructor": {
+					"details": "Prevents the implementation contract from being initialized directly."
+				},
+				"distributorConfiguration()": {
+					"returns": {
+						"_0": "The complete distributor configuration struct."
+					}
+				},
+				"emergencyWithdraw(address,address,uint256)": {
+					"params": {
+						"amount": "The amount of tokens to withdraw.",
+						"receiver": "The address to receive tokens.",
+						"token": "The address of the token to withdraw."
+					}
+				},
+				"initialize((uint16,uint16,address,address,address,address,uint256))": {
+					"params": {
+						"tokenDistributorInitParams": "The initialization parameters for the distributor."
+					}
+				},
+				"investorPosition(address)": {
+					"params": {
+						"investor": "The address of the investor."
+					},
+					"returns": {
+						"_0": "The complete investor position struct."
+					}
+				},
+				"investorVestingStatus(address)": {
+					"params": {
+						"investor": "The address of the investor."
+					},
+					"returns": {
+						"vestingStatus": "The complete vesting status struct."
+					}
+				},
+				"paused()": {
+					"details": "Returns true if the contract is paused, and false otherwise."
+				},
+				"supplyTokens(uint256,uint256,uint256)": {
+					"params": {
+						"amount": "The amount of tokens to supply.",
+						"legionFee": "The fee amount for Legion.",
+						"referrerFee": "The fee amount for referrer."
+					}
+				},
+				"vestingConfiguration()": {
+					"returns": {
+						"_0": "The complete vesting configuration struct."
+					}
+				}
+			},
+			"stateVariables": {
+				"s_investorPositions": {
+					"details": "Mapping of investor addresses to their positions."
+				},
+				"s_tokenDistributorConfig": {
+					"details": "Token distributor configuration"
+				}
+			},
+			"title": "Legion Token Distributor",
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"LegionSale__AlreadySettled(address)": [
+					{
+						"notice": "Thrown when an investor attempts to settle tokens that are already settled."
+					}
+				],
+				"LegionSale__InvalidFeeAmount(uint256,uint256)": [
+					{
+						"notice": "Thrown when an invalid fee amount is provided."
+					}
+				],
+				"LegionSale__InvalidSignature(bytes)": [
+					{
+						"notice": "Thrown when an invalid signature is provided for investment."
+					}
+				],
+				"LegionSale__InvalidTokenAmountSupplied(uint256,uint256)": [
+					{
+						"notice": "Thrown when an invalid amount of tokens is supplied by the project."
+					}
+				],
+				"LegionSale__NotCalledByLegion()": [
+					{
+						"notice": "Thrown when a function is not called by the Legion address."
+					}
+				],
+				"LegionSale__NotCalledByProject()": [
+					{
+						"notice": "Thrown when a function is not called by the project admin."
+					}
+				],
+				"LegionSale__TokensAlreadySupplied()": [
+					{
+						"notice": "Thrown when attempting to resupply tokens."
+					}
+				],
+				"LegionSale__TokensNotSupplied()": [
+					{
+						"notice": "Thrown when an action requires supplied tokens first."
+					}
+				],
+				"LegionSale__ZeroAddressProvided()": [
+					{
+						"notice": "Thrown when a zero address is provided as a parameter."
+					}
+				],
+				"LegionSale__ZeroValueProvided()": [
+					{
+						"notice": "Thrown when a zero value is provided as a parameter."
+					}
+				],
+				"LegionVesting__InvalidVestingConfig(uint8,uint256,uint256,uint256,uint256,uint256,uint256)": [
+					{
+						"notice": "Thrown when the vesting configuration parameters are invalid."
+					}
+				]
+			},
+			"events": {
+				"EmergencyWithdraw(address,address,uint256)": {
+					"notice": "Emitted during an emergency withdrawal by Legion."
+				},
+				"LegionAddressesSynced(address,address,address,address,address)": {
+					"notice": "Emitted when Legion addresses are successfully synced."
+				},
+				"TokenAllocationClaimed(uint256,uint256,address)": {
+					"notice": "Emitted when an investor successfully claims their token allocation."
+				},
+				"TokensSuppliedForDistribution(uint256,uint256,uint256)": {
+					"notice": "Emitted when tokens are supplied for distribution by the project."
+				},
+				"VestedTokensReleased(address)": {
+					"notice": "Emitted when tokens are released to an investor."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"claimTokenAllocation(uint256,(uint64,uint64,uint64,uint8,uint64,uint64,uint64),bytes,bytes)": {
+					"notice": "Allows investors to claim their token allocation."
+				},
+				"constructor": {
+					"notice": "Constructs the LegionTokenDistributor and disables initializers."
+				},
+				"distributorConfiguration()": {
+					"notice": "Retrieves the current distributor configuration."
+				},
+				"emergencyWithdraw(address,address,uint256)": {
+					"notice": "Performs an emergency withdrawal of tokens."
+				},
+				"initialize((uint16,uint16,address,address,address,address,uint256))": {
+					"notice": "Initializes the token distributor with parameters."
+				},
+				"investorPosition(address)": {
+					"notice": "Retrieves an investor's position details."
+				},
+				"investorVestingStatus(address)": {
+					"notice": "Retrieves an investor's vesting status."
+				},
+				"pause()": {
+					"notice": "Pauses the distribution."
+				},
+				"releaseVestedTokens()": {
+					"notice": "Releases vested tokens to the investor."
+				},
+				"supplyTokens(uint256,uint256,uint256)": {
+					"notice": "Supplies tokens for distribution after TGE."
+				},
+				"syncLegionAddresses()": {
+					"notice": "Synchronizes Legion addresses from the address registry."
+				},
+				"unpause()": {
+					"notice": "Resumes the distribution."
+				},
+				"vestingConfiguration()": {
+					"notice": "Returns the current vesting configuration."
+				}
+			},
+			"notice": "Manages the distribution of ERC20 tokens sold through the Legion Protocol.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/distribution/LegionTokenDistributor.sol": "LegionTokenDistributor"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Bytes.sol": {
+			"keccak256": "0x27f63b5ce607636a96671512eaad8149f65198a78c0c05b341423f1522d523cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2c8befbed6f99c5eda71dd55de3492cbef73f67f7f6e778ed33aa74485103cb3",
+				"dweb:/ipfs/QmS4uYzbCH32Ct5AFZYahSURDUcmT24zFMsfkfpywFJPtW"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Panic.sol": {
+			"keccak256": "0xf7fe324703a64fc51702311dc51562d5cb1497734f074e4f483bfb6717572d7a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c6a5ff4f9fd8649b7ee20800b7fa387d3465bd77cf20c2d1068cd5c98e1ed57a",
+				"dweb:/ipfs/QmVSaVJf9FXFhdYEYeCEfjMVHrxDh5qL4CGkxdMWpQCrqG"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Pausable.sol": {
+			"keccak256": "0xdb484371dfbb848cb6f5d70464e9ac9b2900e4164ead76bbce4fef0b44bcc68f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f9d6f6f6600a2bec622f699081b58350873b5e63ce05464d17d674a290bb8a7c",
+				"dweb:/ipfs/QmQKVzSQY1PM3Bid4QhgVVZyx6B4Jx7XgaQzLKHj38vJz8"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Strings.sol": {
+			"keccak256": "0x36d1750bf1aa5fee9c52adb2f7857ab652daca722fc05dff533b364f67a1139a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2e5e7052539b7849d02f3ce25acc1dce29373c11cfae9f0bc918c54b780c549a",
+				"dweb:/ipfs/QmRGE32xNkMTo6i4pHHMxjpiu77yPwnTA25SFngw2NXJys"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/ECDSA.sol": {
+			"keccak256": "0x3c16b6d0a08ef430daec8b70bbb3ea6ccfa515d10504aec0bf91719d2e62229a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4743e34a1f4db83ab4ce779ca9549dfa2ec0dfda209180cea5c59160d3c1723b",
+				"dweb:/ipfs/QmTRCzC22X66SzC4raDnUTdWoaLs1cgBgnWY8hFhJTw2s9"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/MessageHashUtils.sol": {
+			"keccak256": "0x9ebedd4bbc89d2743004cf27c1e3fb77a329c746d7c71b8cebc766c0230461a5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f47360b41c8c61eaff43e7c4823f742a83d550b85f716ea3d13c72a0ae4c3ab9",
+				"dweb:/ipfs/QmV2GLXYRqU1S2tbDkgq5e8EnGkm84m2oGJPy7JNX9dDPg"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/Math.sol": {
+			"keccak256": "0xe7b82bf9ab6d5016033e5cd2b1d4320a9c12551551d4c57650b5ddebfa47ff07",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://57dd5fbf78e3866b8988cfada7592de8a285cd14e6b42c694526971481bf23d2",
+				"dweb:/ipfs/Qmf6Lu6k74k6vgj5kTNYqh2eSHx72urgiD5yYrw7MTY7JT"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeCast.sol": {
+			"keccak256": "0x340b2f51e4c8aa4e3b2c4e3e12a34ac86f4383ecda2bdbad2e263b5a2d3444a3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f7ce09e887e3407bcfc09de5e263143cc44c8bcc4162a32acdb3144eafd89ce2",
+				"dweb:/ipfs/QmXda4wEQSWT5xQrETZdBXP2M67LH4F49QxQ16rTj6zZ99"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SignedMath.sol": {
+			"keccak256": "0xb1970fac7b64e6c09611e6691791e848d5e3fe410fa5899e7df2e0afd77a99e3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://db5fbb3dddd8b7047465b62575d96231ba8a2774d37fb4737fbf23340fabbb03",
+				"dweb:/ipfs/QmVUSvooZKEdEdap619tcJjTLcAuH6QBdZqAzWwnAXZAWJ"
+			]
+		},
+		"https://github.com/Vectorized/solady/blob/main/src/utils/Initializable.sol": {
+			"keccak256": "0x58ee7b2e966232ca1ca9e9e705d8afcefa83fe29d37d6f8361d73015a9db1fe4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://59f134cb038e0a547f0a3dbfe9c9b6939f7b39dff64646a79e8cf2dd6ba14f80",
+				"dweb:/ipfs/QmfXt149JQEWsYbLUkS9iLP6kGZqzHYyMg7SsLUUPgafEb"
+			]
+		},
+		"https://github.com/Vectorized/solady/blob/main/src/utils/SafeTransferLib.sol": {
+			"keccak256": "0xdbd1ee0cdf8476db0940c00b207c0e352cb8c60f769c8ea70db994e2c4980a1a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d149fc856cf93e23458468083841b94e6372ea58b73c9377365c8d88501d83f5",
+				"dweb:/ipfs/QmQvhbjtxw8gEhfX7BnBmwvt3M6V9CfQmPW1okXYUKo3At"
+			]
+		},
+		"src/distribution/LegionTokenDistributor.sol": {
+			"keccak256": "0xdb3f91432d53b17ff19adbbc8abbbfdddb17613658ecd34daf2c7e0c88b0b10e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://15e27818ec11a8010cc5b19937f270923d187df637bb37d0c08d2054a46f12fe",
+				"dweb:/ipfs/QmdYBkgfHn14XBoHSQr5JbHCoXA8DYPfc1G2i5mXmFgapc"
+			]
+		},
+		"src/interfaces/distribution/ILegionTokenDistributor.sol": {
+			"keccak256": "0x465dfdc5210fd77ad4edff61cf9eece64670780ac807e88b5048b185775bd3e0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41403d3335d08cb07eebf569340d88e76d7c95aebe75dbe6fb2474c4d031b4b9",
+				"dweb:/ipfs/Qmf5wSfWtujCGvVN2DL9mtTmf7YPZny7tk6Bo3UxkTgZK5"
+			]
+		},
+		"src/interfaces/factories/ILegionVestingFactory.sol": {
+			"keccak256": "0xac23d6b128383b49732f40d7d630884b93b3cfe9249f88b6cb32af51e9c239ed",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e3d146cbeb95ab609c73ea31fce986123b64788417464a512a9bae80a3a31a42",
+				"dweb:/ipfs/QmShQBFvsiygECfqaNrRtfGnxM6LbdWmybfk2BfC5kokUk"
+			]
+		},
+		"src/interfaces/registries/ILegionAddressRegistry.sol": {
+			"keccak256": "0x3cb4d3ccd5276d53e2353f92f5192056b65b3c95949a855d3002a63a5ef9c38c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b7e4c7d03a9806a6218b33b96395e4373da0141aadde8da01e53d732acb68e00",
+				"dweb:/ipfs/QmTLvJ3nvLVMpfSigLMNUDi2WqU8D57tZEY2JP4e7UfxCt"
+			]
+		},
+		"src/interfaces/vesting/ILegionVesting.sol": {
+			"keccak256": "0xca7af43f14f87351fb56443d80b361a1928c2cfee89d19ae800d03f49d1fd293",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://97503a8810b8b27da9341ca0afaf5e50f9129b646a136a24e16b4f850720f32b",
+				"dweb:/ipfs/QmctAvjmsTLdeoauJJnh58u5eXmSAEp8XvL88GqvpZ2k4P"
+			]
+		},
+		"src/interfaces/vesting/ILegionVestingManager.sol": {
+			"keccak256": "0x1829eac0bc82589936e08a7565566401fdb8c45abf5d40774945e910fcbcad97",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2a73fddd6b2348322f94332465e01d3f62298acbf972af4e3b3cdaa2f614d4f2",
+				"dweb:/ipfs/Qmarpv96Aff4RZQr2CT723Nm8EVnwDS675gfAX3ish8kaB"
+			]
+		},
+		"src/utils/Constants.sol": {
+			"keccak256": "0x2be99d9b10006be576a92ed69673fd73ba57f8eb0c9ab269cfb322777debdb12",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://632756553ece0b788585c853dfc605ffef81a7a1c98494fea6d0fd8b64c17fda",
+				"dweb:/ipfs/QmQ3N3AZ4ppPJWKEUbdEZkhM2YHY3VncAX77Fa2rwvgm8y"
+			]
+		},
+		"src/utils/Errors.sol": {
+			"keccak256": "0xd07e80b5360238f42285b670fca19e738ec66b8ea5c2350db7489d396f3af816",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9ed2ee03c96a801ebe6f43b6e8a01fb61aad320b3cb68a64eb3cea5b0ee6508a",
+				"dweb:/ipfs/QmXkge1SS6nySrdbp3nZtHrxa58MHWMmcXeuCwAPeQqweL"
+			]
+		},
+		"src/vesting/LegionVestingManager.sol": {
+			"keccak256": "0x57c90182521436367d96cb409ee5d921f1da7c8d13fe4c3ca990e3e3a8caad2d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://09a484d2e0007430aaf78616c3ec94232097dc6a3da71ce73d27b2a86d2dc792",
+				"dweb:/ipfs/QmVQmuN9PSUkftDEEsBPbH9p4K4b6ruCDZjBaHrSJj3E2w"
+			]
+		}
+	},
+	"version": 1
+}

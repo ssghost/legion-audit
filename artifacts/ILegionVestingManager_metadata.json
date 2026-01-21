@@ -1,0 +1,87 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "vestingConfiguration",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "vestingFactory",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "vestingController",
+								"type": "address"
+							}
+						],
+						"internalType": "struct ILegionVestingManager.LegionVestingConfig",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Legion",
+			"kind": "dev",
+			"methods": {
+				"vestingConfiguration()": {
+					"returns": {
+						"_0": "The complete vesting configuration struct."
+					}
+				}
+			},
+			"title": "ILegionVestingManager",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"vestingConfiguration()": {
+					"notice": "Returns the current vesting configuration."
+				}
+			},
+			"notice": "Interface for the LegionVestingManager contract.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/interfaces/vesting/ILegionVestingManager.sol": "ILegionVestingManager"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [
+			":@openzeppelin/=https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v5.0.0/",
+			":@solady/=https://github.com/Vectorized/solady/blob/main/"
+		]
+	},
+	"sources": {
+		"src/interfaces/vesting/ILegionVestingManager.sol": {
+			"keccak256": "0x1829eac0bc82589936e08a7565566401fdb8c45abf5d40774945e910fcbcad97",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2a73fddd6b2348322f94332465e01d3f62298acbf972af4e3b3cdaa2f614d4f2",
+				"dweb:/ipfs/Qmarpv96Aff4RZQr2CT723Nm8EVnwDS675gfAX3ish8kaB"
+			]
+		}
+	},
+	"version": 1
+}

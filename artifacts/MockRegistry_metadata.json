@@ -1,0 +1,50 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"MockReg.sol": "MockRegistry"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"MockReg.sol": {
+			"keccak256": "0xffe080477c3856e3af45579c36b2c41e86cb7bcbc83edf06af36cfb84377a30e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c372d7f9ce97bf5f54bb48763f89013ad2a67b85ce50fbdaa8037377d1ae856e",
+				"dweb:/ipfs/QmNq3LrYJ5cWsGo92ECRaqHSSSJzNc2cmdFXYVm2pVzTym"
+			]
+		}
+	},
+	"version": 1
+}

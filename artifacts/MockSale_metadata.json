@@ -1,0 +1,168 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "allocation",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "duration",
+						"type": "uint64"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "tgeRate",
+						"type": "uint64"
+					}
+				],
+				"name": "ClaimSuccessful",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "acceptedMerkleRoot",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "allocation",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint64",
+								"name": "vestingStartTime",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "vestingDurationSeconds",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "vestingCliffDurationSeconds",
+								"type": "uint64"
+							},
+							{
+								"internalType": "enum ILegionVestingManager.VestingType",
+								"name": "vestingType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint64",
+								"name": "epochDurationSeconds",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "numberOfEpochs",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "tokenAllocationOnTGERate",
+								"type": "uint64"
+							}
+						],
+						"internalType": "struct ILegionVestingManager.LegionInvestorVestingConfig",
+						"name": "vestingConfig",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "proof",
+						"type": "bytes32[]"
+					}
+				],
+				"name": "claimTokenAllocation",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_root",
+						"type": "bytes32"
+					}
+				],
+				"name": "setAcceptedMerkleRoot",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"mocks/MockSale.sol": "MockSale"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [
+			":@openzeppelin/=https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v5.0.0/",
+			":@solady/=https://github.com/Vectorized/solady/blob/main/"
+		]
+	},
+	"sources": {
+		"https://github.com/ssghost/legion-audit/blob/main/src/interfaces/vesting/ILegionVestingManager.sol": {
+			"keccak256": "0x1829eac0bc82589936e08a7565566401fdb8c45abf5d40774945e910fcbcad97",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2a73fddd6b2348322f94332465e01d3f62298acbf972af4e3b3cdaa2f614d4f2",
+				"dweb:/ipfs/Qmarpv96Aff4RZQr2CT723Nm8EVnwDS675gfAX3ish8kaB"
+			]
+		},
+		"mocks/MockSale.sol": {
+			"keccak256": "0xd72416f1a751316268e9f755dde21276be6a5bf0d54f3d91acdbc341a7e2afe9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://12d93b26cf7d418ce43010fa3daaf093e8aa99d930aa630b83512bca147146d9",
+				"dweb:/ipfs/QmcTCnCTpLGrYR2ZF5DvoHapmqexRWYNoVewNwxcqQ1zmY"
+			]
+		}
+	},
+	"version": 1
+}

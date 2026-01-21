@@ -1,0 +1,670 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "EmergencyWithdraw",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "legionBouncer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "legionSigner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "legionFeeReceiver",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "vestingFactory",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "vestingController",
+						"type": "address"
+					}
+				],
+				"name": "LegionAddressesSynced",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountToBeVested",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountOnClaim",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "investor",
+						"type": "address"
+					}
+				],
+				"name": "TokenAllocationClaimed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "legionFee",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "referrerFee",
+						"type": "uint256"
+					}
+				],
+				"name": "TokensSuppliedForDistribution",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "investor",
+						"type": "address"
+					}
+				],
+				"name": "VestedTokensReleased",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "claimAmount",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint64",
+								"name": "vestingStartTime",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "vestingDurationSeconds",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "vestingCliffDurationSeconds",
+								"type": "uint64"
+							},
+							{
+								"internalType": "enum ILegionVestingManager.VestingType",
+								"name": "vestingType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint64",
+								"name": "epochDurationSeconds",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "numberOfEpochs",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "tokenAllocationOnTGERate",
+								"type": "uint64"
+							}
+						],
+						"internalType": "struct ILegionVestingManager.LegionInvestorVestingConfig",
+						"name": "investorVestingConfig",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bytes",
+						"name": "claimSignature",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "vestingSignature",
+						"type": "bytes"
+					}
+				],
+				"name": "claimTokenAllocation",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "distributorConfiguration",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint16",
+								"name": "legionFeeOnTokensSoldBps",
+								"type": "uint16"
+							},
+							{
+								"internalType": "uint16",
+								"name": "referrerFeeOnTokensSoldBps",
+								"type": "uint16"
+							},
+							{
+								"internalType": "bool",
+								"name": "tokensSupplied",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalAmountToDistribute",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalAmountClaimed",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "askToken",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "projectAdmin",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "legionBouncer",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "legionFeeReceiver",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "referrerFeeReceiver",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "legionSigner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "addressRegistry",
+								"type": "address"
+							}
+						],
+						"internalType": "struct ILegionTokenDistributor.TokenDistributorConfig",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "emergencyWithdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint16",
+								"name": "legionFeeOnTokensSoldBps",
+								"type": "uint16"
+							},
+							{
+								"internalType": "uint16",
+								"name": "referrerFeeOnTokensSoldBps",
+								"type": "uint16"
+							},
+							{
+								"internalType": "address",
+								"name": "referrerFeeReceiver",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "askToken",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "addressRegistry",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "projectAdmin",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalAmountToDistribute",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ILegionTokenDistributor.TokenDistributorInitializationParams",
+						"name": "tokenDistributorInitParams",
+						"type": "tuple"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "investor",
+						"type": "address"
+					}
+				],
+				"name": "investorPosition",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "hasSettled",
+								"type": "bool"
+							},
+							{
+								"internalType": "address",
+								"name": "vestingAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct ILegionTokenDistributor.InvestorPosition",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "investor",
+						"type": "address"
+					}
+				],
+				"name": "investorVestingStatus",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint64",
+								"name": "start",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "end",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "cliffEnd",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint64",
+								"name": "duration",
+								"type": "uint64"
+							},
+							{
+								"internalType": "uint256",
+								"name": "released",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "releasable",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "vestedAmount",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ILegionVestingManager.LegionInvestorVestingStatus",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pause",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "releaseVestedTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "legionFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "referrerFee",
+						"type": "uint256"
+					}
+				],
+				"name": "supplyTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "syncLegionAddresses",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unpause",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Legion",
+			"events": {
+				"EmergencyWithdraw(address,address,uint256)": {
+					"params": {
+						"amount": "The amount of tokens withdrawn.",
+						"receiver": "The address receiving the withdrawn tokens.",
+						"token": "The address of the token withdrawn."
+					}
+				},
+				"LegionAddressesSynced(address,address,address,address,address)": {
+					"params": {
+						"legionBouncer": "The updated Legion bouncer address.",
+						"legionFeeReceiver": "The updated Legion fee receiver address.",
+						"legionSigner": "The updated Legion signer address.",
+						"vestingController": "The updated vesting controller address.",
+						"vestingFactory": "The updated vesting factory address."
+					}
+				},
+				"TokenAllocationClaimed(uint256,uint256,address)": {
+					"params": {
+						"amountOnClaim": "The amount of tokens distributed immediately.",
+						"amountToBeVested": "The amount of tokens sent to vesting contract.",
+						"investor": "The address of the claiming investor."
+					}
+				},
+				"TokensSuppliedForDistribution(uint256,uint256,uint256)": {
+					"params": {
+						"amount": "The amount of tokens supplied.",
+						"legionFee": "The fee amount collected by Legion.",
+						"referrerFee": "The fee amount collected by the referrer."
+					}
+				},
+				"VestedTokensReleased(address)": {
+					"params": {
+						"investor": "The address of the investor."
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"claimTokenAllocation(uint256,(uint64,uint64,uint64,uint8,uint64,uint64,uint64),bytes,bytes)": {
+					"params": {
+						"claimAmount": "The amount of tokens to claim.",
+						"claimSignature": "The signature verifying investment eligibility.",
+						"investorVestingConfig": "The vesting configuration for the investor.",
+						"vestingSignature": "The signature verifying vesting terms."
+					}
+				},
+				"distributorConfiguration()": {
+					"returns": {
+						"_0": "The complete distributor configuration struct."
+					}
+				},
+				"emergencyWithdraw(address,address,uint256)": {
+					"params": {
+						"amount": "The amount of tokens to withdraw.",
+						"receiver": "The address to receive tokens.",
+						"token": "The address of the token to withdraw."
+					}
+				},
+				"initialize((uint16,uint16,address,address,address,address,uint256))": {
+					"params": {
+						"tokenDistributorInitParams": "The initialization parameters for the distributor."
+					}
+				},
+				"investorPosition(address)": {
+					"params": {
+						"investor": "The address of the investor."
+					},
+					"returns": {
+						"_0": "The complete investor position struct."
+					}
+				},
+				"investorVestingStatus(address)": {
+					"params": {
+						"investor": "The address of the investor."
+					},
+					"returns": {
+						"_0": "The complete vesting status struct."
+					}
+				},
+				"supplyTokens(uint256,uint256,uint256)": {
+					"params": {
+						"amount": "The amount of tokens to supply.",
+						"legionFee": "The fee amount for Legion.",
+						"referrerFee": "The fee amount for referrer."
+					}
+				}
+			},
+			"title": "ILegionTokenDistributor",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"EmergencyWithdraw(address,address,uint256)": {
+					"notice": "Emitted during an emergency withdrawal by Legion."
+				},
+				"LegionAddressesSynced(address,address,address,address,address)": {
+					"notice": "Emitted when Legion addresses are successfully synced."
+				},
+				"TokenAllocationClaimed(uint256,uint256,address)": {
+					"notice": "Emitted when an investor successfully claims their token allocation."
+				},
+				"TokensSuppliedForDistribution(uint256,uint256,uint256)": {
+					"notice": "Emitted when tokens are supplied for distribution by the project."
+				},
+				"VestedTokensReleased(address)": {
+					"notice": "Emitted when tokens are released to an investor."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"claimTokenAllocation(uint256,(uint64,uint64,uint64,uint8,uint64,uint64,uint64),bytes,bytes)": {
+					"notice": "Allows investors to claim their token allocation."
+				},
+				"distributorConfiguration()": {
+					"notice": "Retrieves the current distributor configuration."
+				},
+				"emergencyWithdraw(address,address,uint256)": {
+					"notice": "Performs an emergency withdrawal of tokens."
+				},
+				"initialize((uint16,uint16,address,address,address,address,uint256))": {
+					"notice": "Initializes the token distributor with parameters."
+				},
+				"investorPosition(address)": {
+					"notice": "Retrieves an investor's position details."
+				},
+				"investorVestingStatus(address)": {
+					"notice": "Retrieves an investor's vesting status."
+				},
+				"pause()": {
+					"notice": "Pauses the distribution."
+				},
+				"releaseVestedTokens()": {
+					"notice": "Releases vested tokens to the investor."
+				},
+				"supplyTokens(uint256,uint256,uint256)": {
+					"notice": "Supplies tokens for distribution after TGE."
+				},
+				"syncLegionAddresses()": {
+					"notice": "Synchronizes Legion addresses from the address registry."
+				},
+				"unpause()": {
+					"notice": "Resumes the distribution."
+				}
+			},
+			"notice": "Interface for the LegionTokenDistributor contract.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/interfaces/distribution/ILegionTokenDistributor.sol": "ILegionTokenDistributor"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"src/interfaces/distribution/ILegionTokenDistributor.sol": {
+			"keccak256": "0x465dfdc5210fd77ad4edff61cf9eece64670780ac807e88b5048b185775bd3e0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41403d3335d08cb07eebf569340d88e76d7c95aebe75dbe6fb2474c4d031b4b9",
+				"dweb:/ipfs/Qmf5wSfWtujCGvVN2DL9mtTmf7YPZny7tk6Bo3UxkTgZK5"
+			]
+		},
+		"src/interfaces/vesting/ILegionVestingManager.sol": {
+			"keccak256": "0x1829eac0bc82589936e08a7565566401fdb8c45abf5d40774945e910fcbcad97",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2a73fddd6b2348322f94332465e01d3f62298acbf972af4e3b3cdaa2f614d4f2",
+				"dweb:/ipfs/Qmarpv96Aff4RZQr2CT723Nm8EVnwDS675gfAX3ish8kaB"
+			]
+		}
+	},
+	"version": 1
+}
