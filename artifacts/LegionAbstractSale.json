@@ -1,0 +1,1623 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"sepolia:11155111": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"approve(address,uint256)": "095ea7b3",
+			"balanceOf(address)": "70a08231",
+			"cancel()": "ea8a1af0",
+			"claimTokenAllocation(uint256,(uint64,uint64,uint64,uint8,uint64,uint64,uint64),bytes32[])": "39e485a0",
+			"emergencyWithdraw(address,address,uint256)": "e63ea408",
+			"getApproved(uint256)": "081812fc",
+			"investorPosition(address)": "84cbd9cd",
+			"investorVestingStatus(address)": "699c2994",
+			"isApprovedForAll(address,address)": "e985e9c5",
+			"locked(uint256)": "b45a3c0e",
+			"name()": "06fdde03",
+			"ownerOf(uint256)": "6352211e",
+			"pause()": "8456cb59",
+			"paused()": "5c975abb",
+			"refund()": "590e1ae3",
+			"releaseVestedTokens()": "54dd1da4",
+			"s_positionManagerConfig()": "3fdbdcd9",
+			"safeTransferFrom(address,address,uint256)": "42842e0e",
+			"safeTransferFrom(address,address,uint256,bytes)": "b88d4fde",
+			"saleConfiguration()": "90dbb806",
+			"saleStatus()": "f9020e33",
+			"setAcceptedCapital(bytes32)": "0aff2d86",
+			"setApprovalForAll(address,bool)": "a22cb465",
+			"supplyTokens(uint256,uint256,uint256)": "cc6ae755",
+			"supportsInterface(bytes4)": "01ffc9a7",
+			"symbol()": "95d89b41",
+			"syncLegionAddresses()": "0a636d5b",
+			"tokenURI(uint256)": "c87b56dd",
+			"transferFrom(address,address,uint256)": "23b872dd",
+			"transferInvestorPosition(address,address,uint256)": "08af6e25",
+			"transferInvestorPositionWithAuthorization(address,address,uint256,bytes)": "e5f67382",
+			"unpause()": "3f4ba83a",
+			"vestingConfiguration()": "3cccebc5",
+			"withdrawExcessInvestedCapital(uint256,bytes32[])": "32e719f2",
+			"withdrawInvestedCapitalIfCanceled()": "f71c2364",
+			"withdrawRaisedCapital()": "f68c1d49"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "AccountBalanceOverflow",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "BalanceQueryForZeroAddress",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "ECDSAInvalidSignature",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "length",
+					"type": "uint256"
+				}
+			],
+			"name": "ECDSAInvalidSignatureLength",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
+				}
+			],
+			"name": "ECDSAInvalidSignatureS",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "ERC5192__LockedToken",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "ERC5192__TransferToSelf",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "EnforcedPause",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "ExpectedPause",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "InvalidInitialization",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "investor",
+					"type": "address"
+				}
+			],
+			"name": "LegionSale__AlreadyClaimedExcess",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "investor",
+					"type": "address"
+				}
+			],
+			"name": "LegionSale__AlreadySettled",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "investor",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "LegionSale__CannotWithdrawExcessInvestedCapital",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__CapitalAlreadyWithdrawn",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__CapitalNotRaised",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "expectedAmount",
+					"type": "uint256"
+				}
+			],
+			"name": "LegionSale__InvalidFeeAmount",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "signature",
+					"type": "bytes"
+				}
+			],
+			"name": "LegionSale__InvalidSignature",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "expectedAmount",
+					"type": "uint256"
+				}
+			],
+			"name": "LegionSale__InvalidTokenAmountSupplied",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "LegionSale__InvalidWithdrawAmount",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "investor",
+					"type": "address"
+				}
+			],
+			"name": "LegionSale__InvestorHasRefunded",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__InvestorPositionDoesNotExist",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__NotCalledByLegion",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__NotCalledByProject",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "investor",
+					"type": "address"
+				}
+			],
+			"name": "LegionSale__NotInClaimWhitelist",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "currentTimestamp",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "refundEndTimestamp",
+					"type": "uint256"
+				}
+			],
+			"name": "LegionSale__RefundPeriodIsNotOver",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "currentTimestamp",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "refundEndTimestamp",
+					"type": "uint256"
+				}
+			],
+			"name": "LegionSale__RefundPeriodIsOver",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__SaleIsCanceled",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__SaleIsNotCanceled",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__SaleResultsAlreadyPublished",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__SaleResultsNotPublished",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__TokensAlreadySupplied",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__TokensNotAllocated",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__TokensNotSupplied",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "positionId",
+					"type": "uint256"
+				}
+			],
+			"name": "LegionSale__UnableToMergeInvestorPosition",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "positionId",
+					"type": "uint256"
+				}
+			],
+			"name": "LegionSale__UnableToTransferInvestorPosition",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LegionSale__ZeroAddressProvided",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint8",
+					"name": "vestingType",
+					"type": "uint8"
+				},
+				{
+					"internalType": "uint256",
+					"name": "vestingStartTimestamp",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "vestingDurationSeconds",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "vestingCliffDurationSeconds",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "epochDurationSeconds",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "numberOfEpochs",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenAllocationOnTGERate",
+					"type": "uint256"
+				}
+			],
+			"name": "LegionVesting__InvalidVestingConfig",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NotInitializing",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NotOwnerNorApproved",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "TokenAlreadyExists",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "TokenDoesNotExist",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "TransferFromIncorrectOwner",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "TransferToNonERC721ReceiverImplementer",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "TransferToZeroAddress",
+			"type": "error"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "bytes32",
+					"name": "merkleRoot",
+					"type": "bytes32"
+				}
+			],
+			"name": "AcceptedCapitalSet",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "id",
+					"type": "uint256"
+				}
+			],
+			"name": "Approval",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "operator",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "bool",
+					"name": "isApproved",
+					"type": "bool"
+				}
+			],
+			"name": "ApprovalForAll",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "investor",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "positionId",
+					"type": "uint256"
+				}
+			],
+			"name": "CapitalRefunded",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "investor",
+					"type": "address"
+				}
+			],
+			"name": "CapitalRefundedAfterCancel",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "CapitalWithdrawn",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "receiver",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "EmergencyWithdraw",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "investor",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "positionId",
+					"type": "uint256"
+				}
+			],
+			"name": "ExcessCapitalWithdrawn",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint64",
+					"name": "version",
+					"type": "uint64"
+				}
+			],
+			"name": "Initialized",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "legionBouncer",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "legionSigner",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "legionFeeReceiver",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "vestingFactory",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "vestingController",
+					"type": "address"
+				}
+			],
+			"name": "LegionAddressesSynced",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "Locked",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				}
+			],
+			"name": "Paused",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [],
+			"name": "SaleCanceled",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amountToBeVested",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amountOnClaim",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "investor",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "positionId",
+					"type": "uint256"
+				}
+			],
+			"name": "TokenAllocationClaimed",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "legionFee",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "referrerFee",
+					"type": "uint256"
+				}
+			],
+			"name": "TokensSuppliedForDistribution",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "id",
+					"type": "uint256"
+				}
+			],
+			"name": "Transfer",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "Unlocked",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				}
+			],
+			"name": "Unpaused",
+			"type": "event"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "id",
+					"type": "uint256"
+				}
+			],
+			"name": "approve",
+			"outputs": [],
+			"stateMutability": "payable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				}
+			],
+			"name": "balanceOf",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "result",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "cancel",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"components": [
+						{
+							"internalType": "uint64",
+							"name": "vestingStartTime",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "vestingDurationSeconds",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "vestingCliffDurationSeconds",
+							"type": "uint64"
+						},
+						{
+							"internalType": "enum ILegionVestingManager.VestingType",
+							"name": "vestingType",
+							"type": "uint8"
+						},
+						{
+							"internalType": "uint64",
+							"name": "epochDurationSeconds",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "numberOfEpochs",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "tokenAllocationOnTGERate",
+							"type": "uint64"
+						}
+					],
+					"internalType": "struct ILegionVestingManager.LegionInvestorVestingConfig",
+					"name": "investorVestingConfig",
+					"type": "tuple"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "proof",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "claimTokenAllocation",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "receiver",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "emergencyWithdraw",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "id",
+					"type": "uint256"
+				}
+			],
+			"name": "getApproved",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "result",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "investor",
+					"type": "address"
+				}
+			],
+			"name": "investorPosition",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint256",
+							"name": "investedCapital",
+							"type": "uint256"
+						},
+						{
+							"internalType": "bool",
+							"name": "hasSettled",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "hasClaimedExcess",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "hasRefunded",
+							"type": "bool"
+						},
+						{
+							"internalType": "address",
+							"name": "vestingAddress",
+							"type": "address"
+						}
+					],
+					"internalType": "struct ILegionAbstractSale.InvestorPosition",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "investor",
+					"type": "address"
+				}
+			],
+			"name": "investorVestingStatus",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint64",
+							"name": "start",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "end",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "cliffEnd",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "duration",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint256",
+							"name": "released",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "releasable",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "vestedAmount",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct ILegionVestingManager.LegionInvestorVestingStatus",
+					"name": "vestingStatus",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "operator",
+					"type": "address"
+				}
+			],
+			"name": "isApprovedForAll",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "result",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "locked",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "name",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "id",
+					"type": "uint256"
+				}
+			],
+			"name": "ownerOf",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "result",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "pause",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "paused",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "refund",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "releaseVestedTokens",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "s_positionManagerConfig",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "symbol",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "baseURI",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256",
+					"name": "lastPositionId",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "id",
+					"type": "uint256"
+				}
+			],
+			"name": "safeTransferFrom",
+			"outputs": [],
+			"stateMutability": "payable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "id",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes",
+					"name": "data",
+					"type": "bytes"
+				}
+			],
+			"name": "safeTransferFrom",
+			"outputs": [],
+			"stateMutability": "payable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "saleConfiguration",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint64",
+							"name": "startTime",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "endTime",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "refundEndTime",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint16",
+							"name": "legionFeeOnCapitalRaisedBps",
+							"type": "uint16"
+						},
+						{
+							"internalType": "uint16",
+							"name": "legionFeeOnTokensSoldBps",
+							"type": "uint16"
+						},
+						{
+							"internalType": "uint16",
+							"name": "referrerFeeOnCapitalRaisedBps",
+							"type": "uint16"
+						},
+						{
+							"internalType": "uint16",
+							"name": "referrerFeeOnTokensSoldBps",
+							"type": "uint16"
+						},
+						{
+							"internalType": "uint256",
+							"name": "minimumInvestAmount",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct ILegionAbstractSale.LegionSaleConfiguration",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "saleStatus",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint256",
+							"name": "totalCapitalInvested",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "totalTokensAllocated",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "totalCapitalRaised",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "totalCapitalWithdrawn",
+							"type": "uint256"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "claimTokensMerkleRoot",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "acceptedCapitalMerkleRoot",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bool",
+							"name": "isCanceled",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "tokensSupplied",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "capitalWithdrawn",
+							"type": "bool"
+						}
+					],
+					"internalType": "struct ILegionAbstractSale.LegionSaleStatus",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "merkleRoot",
+					"type": "bytes32"
+				}
+			],
+			"name": "setAcceptedCapital",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "operator",
+					"type": "address"
+				},
+				{
+					"internalType": "bool",
+					"name": "isApproved",
+					"type": "bool"
+				}
+			],
+			"name": "setApprovalForAll",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "legionFee",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "referrerFee",
+					"type": "uint256"
+				}
+			],
+			"name": "supplyTokens",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes4",
+					"name": "interfaceId",
+					"type": "bytes4"
+				}
+			],
+			"name": "supportsInterface",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "result",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "symbol",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "syncLegionAddresses",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "id",
+					"type": "uint256"
+				}
+			],
+			"name": "tokenURI",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "id",
+					"type": "uint256"
+				}
+			],
+			"name": "transferFrom",
+			"outputs": [],
+			"stateMutability": "payable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "positionId",
+					"type": "uint256"
+				}
+			],
+			"name": "transferInvestorPosition",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "positionId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes",
+					"name": "transferSignature",
+					"type": "bytes"
+				}
+			],
+			"name": "transferInvestorPositionWithAuthorization",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "unpause",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "vestingConfiguration",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "vestingFactory",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "vestingController",
+							"type": "address"
+						}
+					],
+					"internalType": "struct ILegionVestingManager.LegionVestingConfig",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "proof",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "withdrawExcessInvestedCapital",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "withdrawInvestedCapitalIfCanceled",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "withdrawRaisedCapital",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

@@ -440,7 +440,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"MockERC20.sol": "MockERC20"
+			"mocks/MockERC20.sol": "MockERC20"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -451,17 +451,12 @@
 			"enabled": true,
 			"runs": 200
 		},
-		"remappings": []
+		"remappings": [
+			":@openzeppelin/=https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v5.0.0/",
+			":@solady/=https://github.com/Vectorized/solady/blob/main/"
+		]
 	},
 	"sources": {
-		"MockERC20.sol": {
-			"keccak256": "0x4a497e9b3ac2ae91b69fd8f55498acdfa1d4c96652b90e1eed5ffc8c083d92e4",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://7662f57472f03ff06ef30a68413cbddaa2042b0bd3069b6b3d2851f0612b8b87",
-				"dweb:/ipfs/QmVDyptTMUiVVN9cHHdh95x9gyuDhLpZDf8esGPXHdhctP"
-			]
-		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/interfaces/draft-IERC6093.sol": {
 			"keccak256": "0x1b88b3fb3d85ba5496d7d5f396f83ee1fddcdd6762059ff65992655b67920998",
 			"license": "MIT",
@@ -495,11 +490,19 @@
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Context.sol": {
-			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"keccak256": "0x75a4ee64c68dbd5f38bddd06e664a64c8271b4caa554fb6f0607dfd672bb4bf3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
-				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+				"bzz-raw://0c4e6cb30d3601e2f7af5af09e265508147cb275a8dcd99d6f7363645cc56867",
+				"dweb:/ipfs/QmNgFkoXNWoUbAyw71rr1sKQ95Rj2GfvYiWg79xEYDn2NY"
+			]
+		},
+		"mocks/MockERC20.sol": {
+			"keccak256": "0x4a497e9b3ac2ae91b69fd8f55498acdfa1d4c96652b90e1eed5ffc8c083d92e4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7662f57472f03ff06ef30a68413cbddaa2042b0bd3069b6b3d2851f0612b8b87",
+				"dweb:/ipfs/QmVDyptTMUiVVN9cHHdh95x9gyuDhLpZDf8esGPXHdhctP"
 			]
 		}
 	},

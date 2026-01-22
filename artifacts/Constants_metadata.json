@@ -1,0 +1,84 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"author": "Legion",
+			"details": "Provides immutable values for time periods, denominators, and unique identifiers used throughout the protocol.",
+			"kind": "dev",
+			"methods": {},
+			"stateVariables": {
+				"BASIS_POINTS_DENOMINATOR": {
+					"details": "Denominator for basis points calculations (10,000 where 1% = 100 bps)."
+				},
+				"LEGION_BOUNCER_ID": {
+					"details": "Unique identifier for the Legion Bouncer in the Address Registry."
+				},
+				"LEGION_FEE_RECEIVER_ID": {
+					"details": "Unique identifier for the Legion Fee Receiver in the Address Registry."
+				},
+				"LEGION_SIGNER_ID": {
+					"details": "Unique identifier for the Legion Signer in the Address Registry."
+				},
+				"LEGION_VESTING_CONTROLLER_ID": {
+					"details": "Unique identifier for the Legion Vesting Controller in the Address Registry."
+				},
+				"LEGION_VESTING_FACTORY_ID": {
+					"details": "Unique identifier for the Legion Vesting Factory in the Address Registry."
+				},
+				"MAX_EPOCH_DURATION_SECONDS": {
+					"details": "Maximum duration allowed for an epoch, set to 52 weeks (1 year)."
+				},
+				"MAX_VESTING_DURATION_SECONDS": {
+					"details": "Maximum duration allowed for token vesting, set to 520 weeks (10 years)."
+				},
+				"MAX_VESTING_LOCKUP_SECONDS": {
+					"details": "Maximum duration allowed for lockup periods, set to 520 weeks (10 years)."
+				},
+				"TOKEN_ALLOCATION_RATE_DENOMINATOR": {
+					"details": "Denominator for token allocation rate calculations (1e18 for 18 decimal precision)."
+				}
+			},
+			"title": "Legion Constants Library",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Stores constants shared across the Legion Protocol.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/utils/Constants.sol": "Constants"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [
+			":@openzeppelin/=https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v5.0.0/",
+			":@solady/=https://github.com/Vectorized/solady/blob/main/"
+		]
+	},
+	"sources": {
+		"src/utils/Constants.sol": {
+			"keccak256": "0x2be99d9b10006be576a92ed69673fd73ba57f8eb0c9ab269cfb322777debdb12",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://632756553ece0b788585c853dfc605ffef81a7a1c98494fea6d0fd8b64c17fda",
+				"dweb:/ipfs/QmQ3N3AZ4ppPJWKEUbdEZkhM2YHY3VncAX77Fa2rwvgm8y"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,88 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "investor",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "saleContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "investAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenAllocationRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "action",
+						"type": "uint8"
+					}
+				],
+				"name": "getHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"GetHash.sol": "GetHash"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [
+			":@openzeppelin/=https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v5.0.0/",
+			":@solady/=https://github.com/Vectorized/solady/blob/main/"
+		]
+	},
+	"sources": {
+		"GetHash.sol": {
+			"keccak256": "0xf82ffe5ee40edc2075f65ac658cedba4fefbfc6df0789a5422c35bbc52ec85f7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cf18cb6e844ca8652a3641b68d8fa33a90fafce3162ec201d4af9853c3366693",
+				"dweb:/ipfs/QmNrgKFGv8NyUamHVbj2u3zvr6p8U2dLk8W84oyrJ8wbzP"
+			]
+		}
+	},
+	"version": 1
+}

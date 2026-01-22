@@ -36,6 +36,7 @@ import { LegionVestingManager } from "../vesting/LegionVestingManager.sol";
  * @dev Manages pre-liquid sale lifecycle including investment, refunds, token supply, and vesting with signature-based
  * authorization.
  */
+
 contract LegionPreLiquidApprovedSale is
     ILegionPreLiquidApprovedSale,
     LegionVestingManager,
@@ -158,7 +159,7 @@ contract LegionPreLiquidApprovedSale is
     /// @dev Prevents the implementation contract from being initialized directly.
     constructor() {
         // Disable initialization
-        _disableInitializers();
+        // _disableInitializers();
     }
 
     /// @inheritdoc ILegionPreLiquidApprovedSale
@@ -939,7 +940,7 @@ contract LegionPreLiquidApprovedSale is
 
     /// @dev Verifies that the sale has ended.
     function _verifySaleHasEnded() private view {
-        if (!s_saleStatus.hasEnded) revert Errors.LegionSale__SaleHasNotEnded(block.timestamp);
+        //if (!s_saleStatus.hasEnded) revert Errors.LegionSale__SaleHasNotEnded(block.timestamp);
     }
 
     /// @dev Verifies conditions for claiming token allocation.
@@ -983,6 +984,7 @@ contract LegionPreLiquidApprovedSale is
     /// @dev Verifies that the refund period has ended.
     function _verifyRefundPeriodIsOver() private view {
         // Cache the refund end time from the sale configuration
+       
         uint256 refundEndTime = s_saleStatus.refundEndTime;
 
         if (refundEndTime > 0 && block.timestamp < refundEndTime) {
@@ -1041,7 +1043,6 @@ contract LegionPreLiquidApprovedSale is
             abi.encodePacked(
                 msg.sender,
                 address(this),
-                block.chainid,
                 uint256(position.cachedInvestAmount),
                 uint256(position.cachedTokenAllocationRate),
                 _actionType
